@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject private var authViewModel: AuthenticationViewModel
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,7 +28,7 @@ struct LoginView: View {
             Spacer()
             
             Button {
-                // TODO: google login
+                authViewModel.send(action: .googleLogin)
             } label: {
                 Text("Google로 로그인")
             }
