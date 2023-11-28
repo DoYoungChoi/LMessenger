@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6932B14A18E007D21F2 /* LMessengerApp.swift */; };
-		D806D6962B14A18E007D21F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6952B14A18E007D21F2 /* ContentView.swift */; };
+		D806D6962B14A18E007D21F2 /* AuthenticatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6952B14A18E007D21F2 /* AuthenticatedView.swift */; };
 		D806D6982B14A18F007D21F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D806D6972B14A18F007D21F2 /* Assets.xcassets */; };
 		D806D69B2B14A18F007D21F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D806D69A2B14A18F007D21F2 /* Preview Assets.xcassets */; };
 		D806D6A52B14A18F007D21F2 /* LMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6A42B14A18F007D21F2 /* LMessengerTests.swift */; };
 		D806D6AF2B14A18F007D21F2 /* LMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6AE2B14A18F007D21F2 /* LMessengerUITests.swift */; };
 		D806D6B12B14A18F007D21F2 /* LMessengerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6B02B14A18F007D21F2 /* LMessengerUITestsLaunchTests.swift */; };
+		D806D6BF2B14A1AF007D21F2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D806D6BE2B14A1AF007D21F2 /* Colors.xcassets */; };
+		D806D6C42B1579D1007D21F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D806D6C32B1579D1007D21F2 /* LaunchScreen.storyboard */; };
+		D806D6C82B157F70007D21F2 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6C72B157F70007D21F2 /* DIContainer.swift */; };
+		D806D6CB2B157F99007D21F2 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6CA2B157F99007D21F2 /* Services.swift */; };
+		D806D6CE2B158021007D21F2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6CD2B158021007D21F2 /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		D806D6902B14A18E007D21F2 /* LMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D806D6932B14A18E007D21F2 /* LMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerApp.swift; sourceTree = "<group>"; };
-		D806D6952B14A18E007D21F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D806D6952B14A18E007D21F2 /* AuthenticatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedView.swift; sourceTree = "<group>"; };
 		D806D6972B14A18F007D21F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D806D69A2B14A18F007D21F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D806D6A02B14A18F007D21F2 /* LMessengerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMessengerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,11 @@
 		D806D6AA2B14A18F007D21F2 /* LMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D806D6AE2B14A18F007D21F2 /* LMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerUITests.swift; sourceTree = "<group>"; };
 		D806D6B02B14A18F007D21F2 /* LMessengerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMessengerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D806D6BE2B14A1AF007D21F2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D806D6C32B1579D1007D21F2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D806D6C72B157F70007D21F2 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		D806D6CA2B157F99007D21F2 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		D806D6CD2B158021007D21F2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +105,11 @@
 			isa = PBXGroup;
 			children = (
 				D806D6932B14A18E007D21F2 /* LMessengerApp.swift */,
-				D806D6952B14A18E007D21F2 /* ContentView.swift */,
-				D806D6972B14A18F007D21F2 /* Assets.xcassets */,
+				D806D6C62B1579F9007D21F2 /* General */,
+				D806D6C52B1579F5007D21F2 /* View */,
+				D806D6C92B157F8C007D21F2 /* Service */,
+				D806D6C02B157956007D21F2 /* Extension */,
+				D806D6BD2B14A19A007D21F2 /* Resource */,
 				D806D6992B14A18F007D21F2 /* Preview Content */,
 			);
 			path = LMessenger;
@@ -125,6 +138,56 @@
 				D806D6B02B14A18F007D21F2 /* LMessengerUITestsLaunchTests.swift */,
 			);
 			path = LMessengerUITests;
+			sourceTree = "<group>";
+		};
+		D806D6BD2B14A19A007D21F2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6C32B1579D1007D21F2 /* LaunchScreen.storyboard */,
+				D806D6972B14A18F007D21F2 /* Assets.xcassets */,
+				D806D6BE2B14A1AF007D21F2 /* Colors.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D806D6C02B157956007D21F2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D806D6C52B1579F5007D21F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6CC2B158005007D21F2 /* Authentication */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D806D6C62B1579F9007D21F2 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6C72B157F70007D21F2 /* DIContainer.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		D806D6C92B157F8C007D21F2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6CA2B157F99007D21F2 /* Services.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D806D6CC2B158005007D21F2 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6952B14A18E007D21F2 /* AuthenticatedView.swift */,
+				D806D6CD2B158021007D21F2 /* AuthenticationViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D806D6BF2B14A1AF007D21F2 /* Colors.xcassets in Resources */,
+				D806D6C42B1579D1007D21F2 /* LaunchScreen.storyboard in Resources */,
 				D806D69B2B14A18F007D21F2 /* Preview Assets.xcassets in Resources */,
 				D806D6982B14A18F007D21F2 /* Assets.xcassets in Resources */,
 			);
@@ -257,7 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D806D6962B14A18E007D21F2 /* ContentView.swift in Sources */,
+				D806D6CE2B158021007D21F2 /* AuthenticationViewModel.swift in Sources */,
+				D806D6962B14A18E007D21F2 /* AuthenticatedView.swift in Sources */,
+				D806D6CB2B157F99007D21F2 /* Services.swift in Sources */,
+				D806D6C82B157F70007D21F2 /* DIContainer.swift in Sources */,
 				D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +495,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,7 +524,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
