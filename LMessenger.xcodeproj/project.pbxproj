@@ -19,6 +19,12 @@
 		D806D6C82B157F70007D21F2 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6C72B157F70007D21F2 /* DIContainer.swift */; };
 		D806D6CB2B157F99007D21F2 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6CA2B157F99007D21F2 /* Services.swift */; };
 		D806D6CE2B158021007D21F2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6CD2B158021007D21F2 /* AuthenticationViewModel.swift */; };
+		D806D6D32B15855D007D21F2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D806D6D22B15855D007D21F2 /* FirebaseAuth */; };
+		D806D6D52B1585B8007D21F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6D42B1585B8007D21F2 /* AppDelegate.swift */; };
+		D806D6D72B1586DF007D21F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D806D6D62B1586DF007D21F2 /* GoogleService-Info.plist */; };
+		D806D6DA2B158AC3007D21F2 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6D92B158AC3007D21F2 /* AuthenticationService.swift */; };
+		D806D6DE2B158E64007D21F2 /* LoginIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6DD2B158E64007D21F2 /* LoginIntroView.swift */; };
+		D806D6E02B158E73007D21F2 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6DF2B158E73007D21F2 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,12 @@
 		D806D6C72B157F70007D21F2 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		D806D6CA2B157F99007D21F2 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		D806D6CD2B158021007D21F2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		D806D6D42B1585B8007D21F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D806D6D62B1586DF007D21F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D806D6D82B15871B007D21F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D806D6D92B158AC3007D21F2 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		D806D6DD2B158E64007D21F2 /* LoginIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntroView.swift; sourceTree = "<group>"; };
+		D806D6DF2B158E73007D21F2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D806D6D32B15855D007D21F2 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				D806D6932B14A18E007D21F2 /* LMessengerApp.swift */,
+				D806D6D42B1585B8007D21F2 /* AppDelegate.swift */,
+				D806D6D82B15871B007D21F2 /* Info.plist */,
+				D806D6D62B1586DF007D21F2 /* GoogleService-Info.plist */,
 				D806D6C62B1579F9007D21F2 /* General */,
 				D806D6C52B1579F5007D21F2 /* View */,
 				D806D6C92B157F8C007D21F2 /* Service */,
@@ -160,6 +176,8 @@
 		D806D6C52B1579F5007D21F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D806D6DC2B158E57007D21F2 /* MainTabView */,
+				D806D6DB2B158E51007D21F2 /* Login */,
 				D806D6CC2B158005007D21F2 /* Authentication */,
 			);
 			path = View;
@@ -177,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				D806D6CA2B157F99007D21F2 /* Services.swift */,
+				D806D6D92B158AC3007D21F2 /* AuthenticationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -188,6 +207,22 @@
 				D806D6CD2B158021007D21F2 /* AuthenticationViewModel.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D806D6DB2B158E51007D21F2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6DD2B158E64007D21F2 /* LoginIntroView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D806D6DC2B158E57007D21F2 /* MainTabView */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6DF2B158E73007D21F2 /* MainTabView.swift */,
+			);
+			path = MainTabView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +241,9 @@
 			dependencies = (
 			);
 			name = LMessenger;
+			packageProductDependencies = (
+				D806D6D22B15855D007D21F2 /* FirebaseAuth */,
+			);
 			productName = LMessenger;
 			productReference = D806D6902B14A18E007D21F2 /* LMessenger.app */;
 			productType = "com.apple.product-type.application";
@@ -278,6 +316,9 @@
 				Base,
 			);
 			mainGroup = D806D6872B14A18E007D21F2;
+			packageReferences = (
+				D806D6D12B15855D007D21F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = D806D6912B14A18E007D21F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,6 +339,7 @@
 				D806D6C42B1579D1007D21F2 /* LaunchScreen.storyboard in Resources */,
 				D806D69B2B14A18F007D21F2 /* Preview Assets.xcassets in Resources */,
 				D806D6982B14A18F007D21F2 /* Assets.xcassets in Resources */,
+				D806D6D72B1586DF007D21F2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,11 +364,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D806D6D52B1585B8007D21F2 /* AppDelegate.swift in Sources */,
 				D806D6CE2B158021007D21F2 /* AuthenticationViewModel.swift in Sources */,
+				D806D6E02B158E73007D21F2 /* MainTabView.swift in Sources */,
 				D806D6962B14A18E007D21F2 /* AuthenticatedView.swift in Sources */,
 				D806D6CB2B157F99007D21F2 /* Services.swift in Sources */,
 				D806D6C82B157F70007D21F2 /* DIContainer.swift in Sources */,
 				D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */,
+				D806D6DA2B158AC3007D21F2 /* AuthenticationService.swift in Sources */,
+				D806D6DE2B158E64007D21F2 /* LoginIntroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +539,7 @@
 				DEVELOPMENT_TEAM = Q9UQ8U75N8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LMessenger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -522,6 +569,7 @@
 				DEVELOPMENT_TEAM = Q9UQ8U75N8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LMessenger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -656,6 +704,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D806D6D12B15855D007D21F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D806D6D22B15855D007D21F2 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D806D6D12B15855D007D21F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D806D6882B14A18E007D21F2 /* Project object */;
 }
