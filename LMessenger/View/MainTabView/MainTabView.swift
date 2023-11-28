@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @EnvironmentObject private var container: DIContainer
+    @EnvironmentObject private var authViewModel: AuthenticationViewModel
     @State private var selectedTab: MainTabType = .home
     
     init() {
@@ -20,7 +22,7 @@ struct MainTabView: View {
                 Group {
                     switch tab {
                     case .home:
-                        HomeView(homeViewModel: .init())
+                        HomeView(homeViewModel: .init(container: container, userId: authViewModel.userId ?? ""))
                     case .chat:
                         ChatListView()
                     case .phone:
@@ -38,5 +40,9 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    let container = DIContainer(services: StubService())
+    
+    return MainTabView()
+        .environmentObject(container)
+        .environmentObject(AuthenticationViewModel(container: container))
 }

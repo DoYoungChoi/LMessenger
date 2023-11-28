@@ -12,50 +12,85 @@ struct HomeView: View {
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                profileView
-                    .padding(.bottom, 30)
-                
-                searchButton
-                    .padding(.bottom, 24)
-                
-                HStack {
-                    Text("친구")
-                        .font(.system(size: 14))
-                        .foregroundStyle(.bkText)
-                    
-                    Spacer()
-                }
-                .padding(.horizontal, 30)
-                
-                // TODO: 친구 목록
-                if homeViewModel.users.isEmpty {
-                    Spacer(minLength: 89)
-                    emptyView
-                } else {
-                    ForEach(homeViewModel.users, id:\.id) { user in
-                        HStack(spacing: 8) {
-                            Image("person")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .clipShape(Circle())
-                            Text(user.name)
-                                .font(.system(size: 12))
-                                .foregroundStyle(.bkText)
-                            Spacer()
-                        }
-                        .padding(.horizontal, 30)
+            contentView
+                .fullScreenCover(item: $homeViewModel.modalDestination) {
+                    switch $0 {
+                    case .myProfile:
+                        MyProfileView()
+                    case let .otherProfile(userId):
+                        OtherProfileView()
                     }
                 }
+        }
+    }
+    
+    @ViewBuilder
+    var contentView: some View {
+        switch homeViewModel.phase {
+        case .notRequested:
+            PlaceholderView()
+                .onAppear {
+                    homeViewModel.send(action: .fetch)
+                }
+        case .loading:
+            LoadingView()
+        case .success:
+            loadedView
+                .toolbar {
+                    Image("bookmark")
+                    Image("notifications")
+                    Image("person_add")
+                    Button{
+                        // TODO:
+                    } label: {
+                        Image("settings")
+                    }
+                }
+        case .fail:
+            ErrorView()
+        }
+    }
+    
+    var loadedView: some View {
+        ScrollView {
+            profileView
+                .padding(.bottom, 30)
+            
+            searchButton
+                .padding(.bottom, 24)
+            
+            HStack {
+                Text("친구")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.bkText)
+                
+                Spacer()
             }
-            .toolbar {
-                Image("bookmark")
-                Image("notifications")
-                Image("person_add")
-                Button{
-                    // TODO:
-                } label: {
-                    Image("settings")
+            .padding(.horizontal, 30)
+            
+            // TODO: 친구 목록
+            if homeViewModel.users.isEmpty {
+                Spacer(minLength: 89)
+                emptyView
+            } else {
+                LazyVStack {
+                    ForEach(homeViewModel.users, id:\.id) { user in
+                        Button {
+                            homeViewModel.send(action: .presentOtherProfile(user.id))
+                        } label: {
+                            HStack(spacing: 8) {
+                                Image("person")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                Text(user.name)
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(.bkText)
+                                Spacer()
+                            }
+                            .padding(.horizontal, 30)
+                        }
+                    }
                 }
             }
         }
@@ -80,6 +115,9 @@ struct HomeView: View {
                 .clipShape(Circle())
         }
         .padding(.horizontal, 30)
+        .onTapGesture {
+            homeViewModel.send(action: .presentMyProfile)
+        }
     }
     
     var searchButton: some View {
@@ -131,5 +169,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(homeViewModel: .init())
+    HomeView(homeViewModel: .init(container: .init(services: StubService()), userId: "user"))
 }
