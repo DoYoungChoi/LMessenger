@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     @Environment(\.dismiss) var dismiss
@@ -33,13 +34,19 @@ struct LoginView: View {
                 Text("Google로 로그인")
             }
             .buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyDeep))
-            
-            Button {
-                // TODO: Apple login
-            } label: {
-                Text("Apple로 로그인")
+           
+            SignInWithAppleButton { request in
+                // 인증 요청 시에 불리는 closure
+                // request에 원하는 정보와 nonce 세팅
+                authViewModel.send(action: .appleLogin(request))
+            } onCompletion: { result in
+                // 인증 완료 시에 불리는 closure
+                // result가 성공 시 Firebase 로그인 시도
+                authViewModel.send(action: .appleLoginCompletion(result))
             }
-            .buttonStyle(LoginButtonStyle(textColor: .bkText, borderColor: .greyDeep))
+            .frame(height: 40)
+            .padding(.horizontal, 15)
+            .cornerRadius(5)
         }
         .navigationBarBackButtonHidden()
         .toolbar {
@@ -49,6 +56,11 @@ struct LoginView: View {
                 } label: {
                     Image("back")
                 }
+            }
+        }
+        .overlay {
+            if authViewModel.isLoading {
+                ProgressView()
             }
         }
     }
