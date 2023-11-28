@@ -32,6 +32,10 @@
 		D806D6EC2B15994C007D21F2 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6EB2B15994C007D21F2 /* ServiceError.swift */; };
 		D806D6F12B15C023007D21F2 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6EF2B15C023007D21F2 /* SHA256.swift */; };
 		D806D6F22B15C023007D21F2 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6F02B15C023007D21F2 /* RandomNonceString.swift */; };
+		D806D6F42B15CA69007D21F2 /* MainTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6F32B15CA69007D21F2 /* MainTabType.swift */; };
+		D806D6F92B15CB5D007D21F2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6F82B15CB5D007D21F2 /* HomeView.swift */; };
+		D806D6FC2B15CB6A007D21F2 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6FB2B15CB6A007D21F2 /* ChatListView.swift */; };
+		D806D6FE2B15E78E007D21F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6FD2B15E78E007D21F2 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		D806D6ED2B15BD50007D21F2 /* LMessenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LMessenger.entitlements; sourceTree = "<group>"; };
 		D806D6EF2B15C023007D21F2 /* SHA256.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA256.swift; sourceTree = "<group>"; };
 		D806D6F02B15C023007D21F2 /* RandomNonceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomNonceString.swift; sourceTree = "<group>"; };
+		D806D6F32B15CA69007D21F2 /* MainTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabType.swift; sourceTree = "<group>"; };
+		D806D6F82B15CB5D007D21F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D806D6FB2B15CB6A007D21F2 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+		D806D6FD2B15E78E007D21F2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,9 +202,11 @@
 		D806D6C52B1579F5007D21F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D806D6DC2B158E57007D21F2 /* MainTabView */,
-				D806D6DB2B158E51007D21F2 /* Login */,
 				D806D6CC2B158005007D21F2 /* Authentication */,
+				D806D6DB2B158E51007D21F2 /* Login */,
+				D806D6DC2B158E57007D21F2 /* MainTabView */,
+				D806D6F52B15CB10007D21F2 /* Home */,
+				D806D6F62B15CB14007D21F2 /* Chat */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +251,7 @@
 		D806D6DC2B158E57007D21F2 /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
+				D806D6F32B15CA69007D21F2 /* MainTabType.swift */,
 				D806D6DF2B158E73007D21F2 /* MainTabView.swift */,
 			);
 			path = MainTabView;
@@ -261,6 +272,23 @@
 				D806D6EF2B15C023007D21F2 /* SHA256.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		D806D6F52B15CB10007D21F2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6F82B15CB5D007D21F2 /* HomeView.swift */,
+				D806D6FD2B15E78E007D21F2 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D806D6F62B15CB14007D21F2 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				D806D6FB2B15CB6A007D21F2 /* ChatListView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,16 +432,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D806D6FE2B15E78E007D21F2 /* HomeViewModel.swift in Sources */,
 				D806D6D52B1585B8007D21F2 /* AppDelegate.swift in Sources */,
 				D806D6CE2B158021007D21F2 /* AuthenticationViewModel.swift in Sources */,
 				D806D6F22B15C023007D21F2 /* RandomNonceString.swift in Sources */,
 				D806D6E02B158E73007D21F2 /* MainTabView.swift in Sources */,
+				D806D6FC2B15CB6A007D21F2 /* ChatListView.swift in Sources */,
 				D806D6962B14A18E007D21F2 /* AuthenticatedView.swift in Sources */,
+				D806D6F92B15CB5D007D21F2 /* HomeView.swift in Sources */,
 				D806D6CB2B157F99007D21F2 /* Services.swift in Sources */,
 				D806D6C82B157F70007D21F2 /* DIContainer.swift in Sources */,
 				D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */,
 				D806D6DA2B158AC3007D21F2 /* AuthenticationService.swift in Sources */,
 				D806D6F12B15C023007D21F2 /* SHA256.swift in Sources */,
+				D806D6F42B15CA69007D21F2 /* MainTabType.swift in Sources */,
 				D806D6EC2B15994C007D21F2 /* ServiceError.swift in Sources */,
 				D806D6EA2B159909007D21F2 /* User.swift in Sources */,
 				D806D6E22B1592AA007D21F2 /* LoginView.swift in Sources */,
