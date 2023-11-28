@@ -25,6 +25,8 @@
 		D806D6DA2B158AC3007D21F2 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6D92B158AC3007D21F2 /* AuthenticationService.swift */; };
 		D806D6DE2B158E64007D21F2 /* LoginIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6DD2B158E64007D21F2 /* LoginIntroView.swift */; };
 		D806D6E02B158E73007D21F2 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6DF2B158E73007D21F2 /* MainTabView.swift */; };
+		D806D6E22B1592AA007D21F2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6E12B1592AA007D21F2 /* LoginView.swift */; };
+		D806D6E42B159371007D21F2 /* LoginButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D6E32B159371007D21F2 /* LoginButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		D806D6D92B158AC3007D21F2 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		D806D6DD2B158E64007D21F2 /* LoginIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginIntroView.swift; sourceTree = "<group>"; };
 		D806D6DF2B158E73007D21F2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		D806D6E12B1592AA007D21F2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D806D6E32B159371007D21F2 /* LoginButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				D806D6DD2B158E64007D21F2 /* LoginIntroView.swift */,
+				D806D6E12B1592AA007D21F2 /* LoginView.swift */,
+				D806D6E32B159371007D21F2 /* LoginButtonStyle.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -372,7 +378,9 @@
 				D806D6C82B157F70007D21F2 /* DIContainer.swift in Sources */,
 				D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */,
 				D806D6DA2B158AC3007D21F2 /* AuthenticationService.swift in Sources */,
+				D806D6E22B1592AA007D21F2 /* LoginView.swift in Sources */,
 				D806D6DE2B158E64007D21F2 /* LoginIntroView.swift in Sources */,
+				D806D6E42B159371007D21F2 /* LoginButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
