@@ -12,8 +12,10 @@ import FirebaseDatabase
 protocol UserDBRepositoryType {
     func addUser(_ object: UserObject) -> AnyPublisher<Void, DBError>
     func getUser(userId: String) -> AnyPublisher<UserObject, DBError>
+    func getUser(userId: String) async throws -> UserObject
     func loadUsers() -> AnyPublisher<[UserObject], DBError>
     func addUserAfterContact(users: [UserObject]) -> AnyPublisher<Void, DBError>
+    func updateUser(userId: String, key: String, value: Any) async throws
 }
 
 class UserDBRepository: UserDBRepositoryType {
@@ -64,6 +66,16 @@ class UserDBRepository: UserDBRepositoryType {
             }
         }
         .eraseToAnyPublisher()
+    }
+    
+    func getUser(userId: String) async throws -> UserObject {
+        guard let value = try await self.db.child(DBKey.users).child(userId).getData().value else {
+            throw DBError.emptyValue
+        }
+        
+        let data = try JSONSerialization.data(withJSONObject: value)
+        let userObject = try JSONDecoder().decode(UserObject.self, from: data)
+        return userObject
     }
     
     func loadUsers() -> AnyPublisher<[UserObject], DBError> {
@@ -134,5 +146,9 @@ class UserDBRepository: UserDBRepositoryType {
             .last()
             .mapError { .error($0) }
             .eraseToAnyPublisher()
+    }
+    
+    func updateUser(userId: String, key: String, value: Any) async throws {
+        try await self.db.child(DBKey.users).child(userId).child(key).setValue(value)
     }
 }
