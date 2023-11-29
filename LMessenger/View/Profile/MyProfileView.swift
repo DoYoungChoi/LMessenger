@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct MyProfileView: View {
     @Environment(\.dismiss) var dismiss
@@ -55,9 +56,8 @@ struct MyProfileView: View {
     }
     
     var profileView: some View {
-        Button {
-            // TODO:
-        } label: {
+        PhotosPicker(selection: $profileViewModel.imageSelection,
+                     matching: .images) {
             Image("person")
                 .resizable()
                 .frame(width: 80, height: 80)
@@ -108,5 +108,5 @@ struct MyProfileView: View {
 }
 
 #Preview {
-    MyProfileView(profileViewModel: .init(userId: "user", container: DIContainer(services: StubService())))
+    MyProfileView(profileViewModel: .init(container: DIContainer(services: StubService()), userId: "user"))
 }

@@ -17,7 +17,7 @@ struct HomeView: View {
                 .fullScreenCover(item: $homeViewModel.modalDestination) {
                     switch $0 {
                     case .myProfile:
-                        MyProfileView(profileViewModel: .init(userId: homeViewModel.userId, container: container))
+                        MyProfileView(profileViewModel: .init(container: container, userId: homeViewModel.userId))
                     case let .otherProfile(userId):
                         OtherProfileView()
                     }
