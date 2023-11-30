@@ -23,6 +23,8 @@ struct HomeView: View {
                         OtherProfileView(profileViewModel: .init(container: container, userId: userId)) { otherUser in
                             homeViewModel.send(action: .goToChat(otherUser))
                         }
+                    case .setting:
+                        SettingView(settingViewModel: .init())
                     }
                 }
                 .navigationDestination(for: NavigationDestination.self) {
@@ -48,7 +50,7 @@ struct HomeView: View {
                     Image("notifications")
                     Image("person_add")
                     Button{
-                        // TODO:
+                        homeViewModel.send(action: .presentView(.setting))
                     } label: {
                         Image("settings")
                     }
@@ -85,7 +87,7 @@ struct HomeView: View {
                 LazyVStack {
                     ForEach(homeViewModel.users, id:\.id) { user in
                         Button {
-                            homeViewModel.send(action: .presentOtherProfile(user.id))
+                            homeViewModel.send(action: .presentView(.otherProfile(user.id)))
                         } label: {
                             HStack(spacing: 8) {
                                 Image("person")
@@ -125,7 +127,7 @@ struct HomeView: View {
         }
         .padding(.horizontal, 30)
         .onTapGesture {
-            homeViewModel.send(action: .presentMyProfile)
+            homeViewModel.send(action: .presentView(.myProfile))
         }
     }
     

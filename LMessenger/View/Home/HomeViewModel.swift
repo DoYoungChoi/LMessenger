@@ -13,8 +13,7 @@ class HomeViewModel: ObservableObject {
     enum Action {
         case fetch
         case requestContacts
-        case presentMyProfile
-        case presentOtherProfile(String)
+        case presentView(HomeModalDestination)
         case goToChat(User)
     }
     
@@ -82,10 +81,8 @@ class HomeViewModel: ObservableObject {
                     self?.phase = .success
                 }
                 .store(in: &subscriptions)
-        case .presentMyProfile:
-            modalDestination = .myProfile
-        case let .presentOtherProfile(userId):
-            modalDestination = .otherProfile(userId)
+        case .presentView(let destination):
+            modalDestination = destination
         case let .goToChat(user):
             container.services.chatRoomService.createChatRoomIfNeeded(myUserId: userId, otherUserId: user.id, otherUserName: user.name)
                 .sink { completion in
