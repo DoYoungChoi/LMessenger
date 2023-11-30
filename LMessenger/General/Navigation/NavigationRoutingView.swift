@@ -18,8 +18,9 @@ struct NavigationRoutingView: View {
                                           chatRoomId: chatRoomId,
                                           myUserId: myUserId,
                                           otherUserId: otherUserId))
-        case .search:
-            SearchView()
+        case let .search(userId):
+            SearchView(searchViewModel: .init(container: container,
+                                              userId: userId))
         }
     }
 }

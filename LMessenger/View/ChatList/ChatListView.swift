@@ -14,7 +14,7 @@ struct ChatListView: View {
     var body: some View {
         NavigationStack(path: $navigationRouter.destination) {
             ScrollView {
-                NavigationLink(value: NavigationDestination.search) {
+                NavigationLink(value: NavigationDestination.search(userId: chatListViewModel.userId)) {
                     SearchButton()
                 }
                 .padding(.top, 14)
