@@ -16,6 +16,7 @@ protocol UserDBRepositoryType {
     func loadUsers() -> AnyPublisher<[UserObject], DBError>
     func addUserAfterContact(users: [UserObject]) -> AnyPublisher<Void, DBError>
     func updateUser(userId: String, key: String, value: Any) async throws
+    func updateUser(userId: String, key: String, value: Any) -> AnyPublisher<Void, DBError>
 }
 
 class UserDBRepository: UserDBRepositoryType {
@@ -150,5 +151,19 @@ class UserDBRepository: UserDBRepositoryType {
     
     func updateUser(userId: String, key: String, value: Any) async throws {
         try await self.db.child(DBKey.users).child(userId).child(key).setValue(value)
+    }
+    
+    func updateUser(userId: String, key: String, value: Any) -> AnyPublisher<Void, DBError> {
+        Future<Void, Error> { [weak self] promise in
+            self?.db.child(DBKey.users).child(userId).child(key).setValue(value) { error, _ in
+                if let error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(()))
+                }
+            }
+        }
+        .mapError { DBError.error($0) }
+        .eraseToAnyPublisher()
     }
 }

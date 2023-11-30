@@ -91,6 +91,8 @@
 		D806D7772B1858BC007D21F2 /* ChatImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7762B1858BC007D21F2 /* ChatImageItemView.swift */; };
 		D806D77A2B18658B007D21F2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = D806D7792B18658B007D21F2 /* FirebaseMessaging */; };
 		D806D77C2B18672E007D21F2 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D77B2B18672E007D21F2 /* PushNotificationService.swift */; };
+		D806D77E2B18707A007D21F2 /* PushNotificationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D77D2B18707A007D21F2 /* PushNotificationProvider.swift */; };
+		D806D7802B1870B8007D21F2 /* PushObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D77F2B1870B8007D21F2 /* PushObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +196,8 @@
 		D806D7742B1845C1007D21F2 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		D806D7762B1858BC007D21F2 /* ChatImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageItemView.swift; sourceTree = "<group>"; };
 		D806D77B2B18672E007D21F2 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
+		D806D77D2B18707A007D21F2 /* PushNotificationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationProvider.swift; sourceTree = "<group>"; };
+		D806D77F2B1870B8007D21F2 /* PushObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 				D806D6C52B1579F5007D21F2 /* View */,
 				D806D6C92B157F8C007D21F2 /* Service */,
 				D806D7022B1601C6007D21F2 /* Repository */,
+				D806D7072B16031A007D21F2 /* DTO */,
 				D806D72F2B16F4D4007D21F2 /* Provider */,
 				D806D6E82B1598FB007D21F2 /* Model */,
 				D806D6EE2B15BFB7007D21F2 /* Util */,
@@ -435,7 +440,6 @@
 		D806D7022B1601C6007D21F2 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				D806D7072B16031A007D21F2 /* DTO */,
 				D806D70A2B160372007D21F2 /* DBError.swift */,
 				D806D7032B1601DC007D21F2 /* UserDBRepository.swift */,
 				D806D7492B171358007D21F2 /* ChatRoomDBRepository.swift */,
@@ -450,6 +454,7 @@
 				D806D7082B16032F007D21F2 /* UserObject.swift */,
 				D806D74B2B17139D007D21F2 /* ChatRoomObject.swift */,
 				D806D7722B184438007D21F2 /* ChatObject.swift */,
+				D806D77F2B1870B8007D21F2 /* PushObject.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				D806D7302B16F4FE007D21F2 /* UploadProvider.swift */,
+				D806D77D2B18707A007D21F2 /* PushNotificationProvider.swift */,
 			);
 			path = Provider;
 			sourceTree = "<group>";
@@ -737,6 +743,7 @@
 				D806D6E02B158E73007D21F2 /* MainTabView.swift in Sources */,
 				D806D6FC2B15CB6A007D21F2 /* ChatListView.swift in Sources */,
 				D806D75A2B181BE7007D21F2 /* SearchView.swift in Sources */,
+				D806D77E2B18707A007D21F2 /* PushNotificationProvider.swift in Sources */,
 				D806D76F2B183DFF007D21F2 /* KeyboardToolbar.swift in Sources */,
 				D806D7252B16DF7A007D21F2 /* MyProfileDescEditView.swift in Sources */,
 				D806D7672B18350C007D21F2 /* ChatData.swift in Sources */,
@@ -766,6 +773,7 @@
 				D806D7312B16F4FE007D21F2 /* UploadProvider.swift in Sources */,
 				D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */,
 				D806D7502B17163B007D21F2 /* ChatRoom.swift in Sources */,
+				D806D7802B1870B8007D21F2 /* PushObject.swift in Sources */,
 				D806D7752B1845C1007D21F2 /* ChatService.swift in Sources */,
 				D806D7332B16F5C1007D21F2 /* UploadService.swift in Sources */,
 				D806D73F2B1709BA007D21F2 /* URLImageView.swift in Sources */,
