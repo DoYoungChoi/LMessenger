@@ -89,6 +89,8 @@
 		D806D7732B184438007D21F2 /* ChatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7722B184438007D21F2 /* ChatObject.swift */; };
 		D806D7752B1845C1007D21F2 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7742B1845C1007D21F2 /* ChatService.swift */; };
 		D806D7772B1858BC007D21F2 /* ChatImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7762B1858BC007D21F2 /* ChatImageItemView.swift */; };
+		D806D77A2B18658B007D21F2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = D806D7792B18658B007D21F2 /* FirebaseMessaging */; };
+		D806D77C2B18672E007D21F2 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D77B2B18672E007D21F2 /* PushNotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,6 +193,7 @@
 		D806D7722B184438007D21F2 /* ChatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatObject.swift; sourceTree = "<group>"; };
 		D806D7742B1845C1007D21F2 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		D806D7762B1858BC007D21F2 /* ChatImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageItemView.swift; sourceTree = "<group>"; };
+		D806D77B2B18672E007D21F2 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D806D77A2B18658B007D21F2 /* FirebaseMessaging in Frameworks */,
 				D806D7012B15F67B007D21F2 /* FirebaseDatabase in Frameworks */,
 				D806D72C2B16F4A6007D21F2 /* FirebaseStorage in Frameworks */,
 				D806D72E2B16F4A6007D21F2 /* FirebaseStorageCombine-Community in Frameworks */,
@@ -346,6 +350,7 @@
 				D806D71E2B162152007D21F2 /* ContactService.swift */,
 				D806D74D2B1715D7007D21F2 /* ChatRoomService.swift */,
 				D806D7742B1845C1007D21F2 /* ChatService.swift */,
+				D806D77B2B18672E007D21F2 /* PushNotificationService.swift */,
 				D806D7282B16ED1E007D21F2 /* PhotoPicker */,
 				D806D7342B16F637007D21F2 /* Upload */,
 				D806D7392B1701FD007D21F2 /* ImageCache */,
@@ -597,6 +602,7 @@
 				D806D7002B15F67B007D21F2 /* FirebaseDatabase */,
 				D806D72B2B16F4A6007D21F2 /* FirebaseStorage */,
 				D806D72D2B16F4A6007D21F2 /* FirebaseStorageCombine-Community */,
+				D806D7792B18658B007D21F2 /* FirebaseMessaging */,
 			);
 			productName = LMessenger;
 			productReference = D806D6902B14A18E007D21F2 /* LMessenger.app */;
@@ -785,6 +791,7 @@
 				D806D7232B16DAF4007D21F2 /* MyProfileMenuType.swift in Sources */,
 				D806D7732B184438007D21F2 /* ChatObject.swift in Sources */,
 				D806D7532B18198A007D21F2 /* NavigationDestination.swift in Sources */,
+				D806D77C2B18672E007D21F2 /* PushNotificationService.swift in Sources */,
 				D806D70B2B160372007D21F2 /* DBError.swift in Sources */,
 				D806D7212B16D7CA007D21F2 /* MyProfileViewModel.swift in Sources */,
 				D806D6E42B159371007D21F2 /* LoginButtonStyle.swift in Sources */,
@@ -1168,6 +1175,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D806D6D12B15855D007D21F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		D806D7792B18658B007D21F2 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D806D6D12B15855D007D21F2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
