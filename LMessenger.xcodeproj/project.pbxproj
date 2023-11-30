@@ -85,6 +85,10 @@
 		D806D76B2B183884007D21F2 /* ChatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D76A2B183884007D21F2 /* ChatItemView.swift */; };
 		D806D76D2B18389F007D21F2 /* ChatItemDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D76C2B18389F007D21F2 /* ChatItemDirection.swift */; };
 		D806D76F2B183DFF007D21F2 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D76E2B183DFF007D21F2 /* KeyboardToolbar.swift */; };
+		D806D7712B1843E6007D21F2 /* ChatDBRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7702B1843E6007D21F2 /* ChatDBRepository.swift */; };
+		D806D7732B184438007D21F2 /* ChatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7722B184438007D21F2 /* ChatObject.swift */; };
+		D806D7752B1845C1007D21F2 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7742B1845C1007D21F2 /* ChatService.swift */; };
+		D806D7772B1858BC007D21F2 /* ChatImageItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7762B1858BC007D21F2 /* ChatImageItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +187,10 @@
 		D806D76A2B183884007D21F2 /* ChatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemView.swift; sourceTree = "<group>"; };
 		D806D76C2B18389F007D21F2 /* ChatItemDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemDirection.swift; sourceTree = "<group>"; };
 		D806D76E2B183DFF007D21F2 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
+		D806D7702B1843E6007D21F2 /* ChatDBRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDBRepository.swift; sourceTree = "<group>"; };
+		D806D7722B184438007D21F2 /* ChatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatObject.swift; sourceTree = "<group>"; };
+		D806D7742B1845C1007D21F2 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		D806D7762B1858BC007D21F2 /* ChatImageItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +345,7 @@
 				D806D7052B1601FD007D21F2 /* UserService.swift */,
 				D806D71E2B162152007D21F2 /* ContactService.swift */,
 				D806D74D2B1715D7007D21F2 /* ChatRoomService.swift */,
+				D806D7742B1845C1007D21F2 /* ChatService.swift */,
 				D806D7282B16ED1E007D21F2 /* PhotoPicker */,
 				D806D7342B16F637007D21F2 /* Upload */,
 				D806D7392B1701FD007D21F2 /* ImageCache */,
@@ -425,6 +434,7 @@
 				D806D70A2B160372007D21F2 /* DBError.swift */,
 				D806D7032B1601DC007D21F2 /* UserDBRepository.swift */,
 				D806D7492B171358007D21F2 /* ChatRoomDBRepository.swift */,
+				D806D7702B1843E6007D21F2 /* ChatDBRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -434,6 +444,7 @@
 			children = (
 				D806D7082B16032F007D21F2 /* UserObject.swift */,
 				D806D74B2B17139D007D21F2 /* ChatRoomObject.swift */,
+				D806D7722B184438007D21F2 /* ChatObject.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -540,9 +551,7 @@
 			children = (
 				D806D7572B181BD6007D21F2 /* ChatView.swift */,
 				D806D7622B1831BD007D21F2 /* ChatViewModel.swift */,
-				D806D76A2B183884007D21F2 /* ChatItemView.swift */,
-				D806D76C2B18389F007D21F2 /* ChatItemDirection.swift */,
-				D806D76E2B183DFF007D21F2 /* KeyboardToolbar.swift */,
+				D806D7782B1858C8007D21F2 /* SubView */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -553,6 +562,17 @@
 				D806D7592B181BE7007D21F2 /* SearchView.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		D806D7782B1858C8007D21F2 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				D806D76A2B183884007D21F2 /* ChatItemView.swift */,
+				D806D76C2B18389F007D21F2 /* ChatItemDirection.swift */,
+				D806D76E2B183DFF007D21F2 /* KeyboardToolbar.swift */,
+				D806D7762B1858BC007D21F2 /* ChatImageItemView.swift */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -700,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D806D7112B161A6C007D21F2 /* PlaceholderView.swift in Sources */,
+				D806D7712B1843E6007D21F2 /* ChatDBRepository.swift in Sources */,
 				D806D6FE2B15E78E007D21F2 /* HomeViewModel.swift in Sources */,
 				D806D7092B16032F007D21F2 /* UserObject.swift in Sources */,
 				D806D6D52B1585B8007D21F2 /* AppDelegate.swift in Sources */,
@@ -739,6 +760,7 @@
 				D806D7312B16F4FE007D21F2 /* UploadProvider.swift in Sources */,
 				D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */,
 				D806D7502B17163B007D21F2 /* ChatRoom.swift in Sources */,
+				D806D7752B1845C1007D21F2 /* ChatService.swift in Sources */,
 				D806D7332B16F5C1007D21F2 /* UploadService.swift in Sources */,
 				D806D73F2B1709BA007D21F2 /* URLImageView.swift in Sources */,
 				D806D7552B1819A4007D21F2 /* NavigationRouter.swift in Sources */,
@@ -748,6 +770,7 @@
 				D806D6F42B15CA69007D21F2 /* MainTabType.swift in Sources */,
 				D806D7062B1601FD007D21F2 /* UserService.swift in Sources */,
 				D806D7042B1601DC007D21F2 /* UserDBRepository.swift in Sources */,
+				D806D7772B1858BC007D21F2 /* ChatImageItemView.swift in Sources */,
 				D806D6EC2B15994C007D21F2 /* ServiceError.swift in Sources */,
 				D806D6EA2B159909007D21F2 /* User.swift in Sources */,
 				D806D7272B16EB8E007D21F2 /* PhotoPickerService.swift in Sources */,
@@ -760,6 +783,7 @@
 				D806D73B2B17020F007D21F2 /* MemoryStorage.swift in Sources */,
 				D806D6DE2B158E64007D21F2 /* LoginIntroView.swift in Sources */,
 				D806D7232B16DAF4007D21F2 /* MyProfileMenuType.swift in Sources */,
+				D806D7732B184438007D21F2 /* ChatObject.swift in Sources */,
 				D806D7532B18198A007D21F2 /* NavigationDestination.swift in Sources */,
 				D806D70B2B160372007D21F2 /* DBError.swift in Sources */,
 				D806D7212B16D7CA007D21F2 /* MyProfileViewModel.swift in Sources */,

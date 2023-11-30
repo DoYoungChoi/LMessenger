@@ -7,17 +7,26 @@
 
 import Foundation
 import Combine
+import SwiftUI
+import PhotosUI
 
 class ChatViewModel: ObservableObject {
     
     enum Action {
-        
+        case load
+        case addChat(String)
+        case uploadImage(PhotosPickerItem?)
     }
     
     @Published var chatDataList: [ChatData] = []
     @Published var myUser: User?
     @Published var otherUser: User?
     @Published var message: String = ""
+    @Published var imageSelection: PhotosPickerItem? {
+        didSet {
+            send(action: .uploadImage(imageSelection))
+        }
+    }
     
     private let chatRoomId: String
     private let myUserId: String
@@ -37,10 +46,7 @@ class ChatViewModel: ObservableObject {
         self.otherUserId = otherUserId
         self.container = container
         
-        updateChatDataList(.init(chatId: "chat1_id", userId: "myUserId", message: "안녕하세요", date: Date()))
-        updateChatDataList(.init(chatId: "chat2_id", userId: "otherUserId", message: "Hi", date: Date()))
-        updateChatDataList(.init(chatId: "chat3_id", userId: "otherUserId", message: "뭐해?", date: Date()))
-        updateChatDataList(.init(chatId: "chat4_id", userId: "myUserId", message: "공부", date: Date()))
+        bind()
     }
     
     func updateChatDataList(_ chat: Chat) {
@@ -56,7 +62,65 @@ class ChatViewModel: ObservableObject {
         myUserId == id ? .right : .left
     }
     
+    func bind() {
+        container.services.chatService.observeChat(chatRoomId: chatRoomId)
+            .sink { [weak self] chat in
+                guard let chat else { return }
+                self?.updateChatDataList(chat)
+            }
+            .store(in: &subscriptions)
+    }
+    
     func send(action: Action) {
-        
+        switch action {
+        case .load:
+            Publishers.Zip(container.services.userService.getUser(userId: myUserId),
+                           container.services.userService.getUser(userId: otherUserId))
+            .sink { completion in
+            } receiveValue: { [weak self] myUser, otherUser in
+                self?.myUser = myUser
+                self?.otherUser = otherUser
+            }
+            .store(in: &subscriptions)
+        case let .addChat(message):
+            let chat = Chat(chatId: UUID().uuidString, userId: myUserId, message: message, date: Date())
+            container.services.chatService.addChat(chat, to: chatRoomId)
+                .flatMap { chat in
+                    self.container.services.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId,
+                                                                                      myUserId: self.myUserId,
+                                                                                      myUserName: self.myUser?.name ?? "",
+                                                                                      otherUserId: self.otherUserId,
+                                                                                      lastMessage: chat.lastMessage)
+                }
+                .sink { completion in
+                } receiveValue: { [weak self] _ in
+                    self?.message = ""
+                }
+                .store(in: &subscriptions)
+        case let .uploadImage(pickerItem):
+            guard let pickerItem else { return }
+            container.services.photoPickerService.loadTransferable(from: pickerItem)
+                .flatMap { data in
+                    self.container.services.uploadService.uploadImage(source: .chat(chatRoomId: self.chatRoomId), data: data)
+                }
+                .flatMap { url in
+                    let chat: Chat = .init(chatId: UUID().uuidString,
+                                           userId: self.myUserId,
+                                           photoURL: url.absoluteString,
+                                           date: Date())
+                    return self.container.services.chatService.addChat(chat, to: self.chatRoomId)
+                }
+                .flatMap { chat in
+                    self.container.services.chatRoomService.updateChatRoomLastMessage(chatRoomId: self.chatRoomId,
+                                                                                      myUserId: self.myUserId,
+                                                                                      myUserName: self.myUser?.name ?? "",
+                                                                                      otherUserId: self.otherUserId,
+                                                                                      lastMessage: chat.lastMessage)
+                }
+                .sink { completion in
+                } receiveValue: { _ in
+                }
+                .store(in: &subscriptions)
+        }
     }
 }

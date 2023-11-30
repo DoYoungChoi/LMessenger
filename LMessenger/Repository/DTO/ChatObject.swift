@@ -1,5 +1,5 @@
 //
-//  Chat.swift
+//  ChatObject.swift
 //  LMessenger
 //
 //  Created by dodor on 11/30/23.
@@ -7,27 +7,17 @@
 
 import Foundation
 
-struct Chat: Hashable, Identifiable {
+struct ChatObject: Codable {
     var id: String { chatId }
     var chatId: String
     var userId: String
     var message: String?
     var photoURL: String?
     var date: Date
-    
-    var lastMessage: String {
-        if let message {
-            return message
-        } else if let _ = photoURL {
-            return "사진"
-        } else {
-            return "내용 없음"
-        }
-    }
 }
 
-extension Chat {
-    func toObject() -> ChatObject {
+extension ChatObject {
+    func toModel() -> Chat {
         .init(
             chatId: chatId,
             userId: userId,
@@ -37,4 +27,3 @@ extension Chat {
         )
     }
 }
-
