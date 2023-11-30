@@ -78,6 +78,13 @@
 		D806D75D2B181FDC007D21F2 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D75C2B181FDC007D21F2 /* ChatListViewModel.swift */; };
 		D806D75F2B182102007D21F2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D75E2B182102007D21F2 /* SearchButton.swift */; };
 		D806D7612B1821DB007D21F2 /* NavigationRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7602B1821DB007D21F2 /* NavigationRoutingView.swift */; };
+		D806D7632B1831BD007D21F2 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7622B1831BD007D21F2 /* ChatViewModel.swift */; };
+		D806D7652B183450007D21F2 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7642B183450007D21F2 /* Chat.swift */; };
+		D806D7672B18350C007D21F2 /* ChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7662B18350C007D21F2 /* ChatData.swift */; };
+		D806D7692B183585007D21F2 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7682B183585007D21F2 /* Date+Extension.swift */; };
+		D806D76B2B183884007D21F2 /* ChatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D76A2B183884007D21F2 /* ChatItemView.swift */; };
+		D806D76D2B18389F007D21F2 /* ChatItemDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D76C2B18389F007D21F2 /* ChatItemDirection.swift */; };
+		D806D76F2B183DFF007D21F2 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D76E2B183DFF007D21F2 /* KeyboardToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +176,13 @@
 		D806D75C2B181FDC007D21F2 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
 		D806D75E2B182102007D21F2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		D806D7602B1821DB007D21F2 /* NavigationRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoutingView.swift; sourceTree = "<group>"; };
+		D806D7622B1831BD007D21F2 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		D806D7642B183450007D21F2 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		D806D7662B18350C007D21F2 /* ChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatData.swift; sourceTree = "<group>"; };
+		D806D7682B183585007D21F2 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		D806D76A2B183884007D21F2 /* ChatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemView.swift; sourceTree = "<group>"; };
+		D806D76C2B18389F007D21F2 /* ChatItemDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItemDirection.swift; sourceTree = "<group>"; };
+		D806D76E2B183DFF007D21F2 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +296,7 @@
 		D806D6C02B157956007D21F2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D806D7682B183585007D21F2 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -294,8 +309,8 @@
 				D806D6DC2B158E57007D21F2 /* MainTabView */,
 				D806D6F52B15CB10007D21F2 /* Home */,
 				D806D7192B161CC4007D21F2 /* Profile */,
-				D806D7562B181BA7007D21F2 /* Chat */,
 				D806D6F62B15CB14007D21F2 /* ChatList */,
+				D806D7562B181BA7007D21F2 /* Chat */,
 				D806D75B2B181BEA007D21F2 /* Search */,
 			);
 			path = View;
@@ -362,6 +377,8 @@
 			children = (
 				D806D6E92B159909007D21F2 /* User.swift */,
 				D806D74F2B17163B007D21F2 /* ChatRoom.swift */,
+				D806D7642B183450007D21F2 /* Chat.swift */,
+				D806D7662B18350C007D21F2 /* ChatData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -522,6 +539,10 @@
 			isa = PBXGroup;
 			children = (
 				D806D7572B181BD6007D21F2 /* ChatView.swift */,
+				D806D7622B1831BD007D21F2 /* ChatViewModel.swift */,
+				D806D76A2B183884007D21F2 /* ChatItemView.swift */,
+				D806D76C2B18389F007D21F2 /* ChatItemDirection.swift */,
+				D806D76E2B183DFF007D21F2 /* KeyboardToolbar.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -689,11 +710,17 @@
 				D806D6E02B158E73007D21F2 /* MainTabView.swift in Sources */,
 				D806D6FC2B15CB6A007D21F2 /* ChatListView.swift in Sources */,
 				D806D75A2B181BE7007D21F2 /* SearchView.swift in Sources */,
+				D806D76F2B183DFF007D21F2 /* KeyboardToolbar.swift in Sources */,
 				D806D7252B16DF7A007D21F2 /* MyProfileDescEditView.swift in Sources */,
+				D806D7672B18350C007D21F2 /* ChatData.swift in Sources */,
+				D806D7692B183585007D21F2 /* Date+Extension.swift in Sources */,
+				D806D7632B1831BD007D21F2 /* ChatViewModel.swift in Sources */,
+				D806D7652B183450007D21F2 /* Chat.swift in Sources */,
 				D806D7132B161A9D007D21F2 /* LoadingView.swift in Sources */,
 				D806D6962B14A18E007D21F2 /* AuthenticatedView.swift in Sources */,
 				D806D7382B1701A6007D21F2 /* ImageCacheService.swift in Sources */,
 				D806D71B2B161CD5007D21F2 /* MyProfileView.swift in Sources */,
+				D806D76B2B183884007D21F2 /* ChatItemView.swift in Sources */,
 				D806D7422B1709D5007D21F2 /* URLImageViewModel.swift in Sources */,
 				D806D6F92B15CB5D007D21F2 /* HomeView.swift in Sources */,
 				D806D75D2B181FDC007D21F2 /* ChatListViewModel.swift in Sources */,
@@ -707,6 +734,7 @@
 				D806D70D2B160571007D21F2 /* Constant.swift in Sources */,
 				D806D70F2B161979007D21F2 /* Phase.swift in Sources */,
 				D806D74A2B171358007D21F2 /* ChatRoomDBRepository.swift in Sources */,
+				D806D76D2B18389F007D21F2 /* ChatItemDirection.swift in Sources */,
 				D806D71D2B161CE0007D21F2 /* OtherProfileView.swift in Sources */,
 				D806D7312B16F4FE007D21F2 /* UploadProvider.swift in Sources */,
 				D806D6942B14A18E007D21F2 /* LMessengerApp.swift in Sources */,
