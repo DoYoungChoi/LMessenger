@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class OtherProfileViewModel: ObservableObject {
     
     @Published var userInfo: User?

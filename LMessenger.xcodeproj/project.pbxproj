@@ -75,6 +75,9 @@
 		D806D7552B1819A4007D21F2 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7542B1819A4007D21F2 /* NavigationRouter.swift */; };
 		D806D7582B181BD6007D21F2 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7572B181BD6007D21F2 /* ChatView.swift */; };
 		D806D75A2B181BE7007D21F2 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7592B181BE7007D21F2 /* SearchView.swift */; };
+		D806D75D2B181FDC007D21F2 /* ChatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D75C2B181FDC007D21F2 /* ChatListViewModel.swift */; };
+		D806D75F2B182102007D21F2 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D75E2B182102007D21F2 /* SearchButton.swift */; };
+		D806D7612B1821DB007D21F2 /* NavigationRoutingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D806D7602B1821DB007D21F2 /* NavigationRoutingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +166,9 @@
 		D806D7542B1819A4007D21F2 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		D806D7572B181BD6007D21F2 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		D806D7592B181BE7007D21F2 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D806D75C2B181FDC007D21F2 /* ChatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewModel.swift; sourceTree = "<group>"; };
+		D806D75E2B182102007D21F2 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		D806D7602B1821DB007D21F2 /* NavigationRoutingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRoutingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				D806D6FB2B15CB6A007D21F2 /* ChatListView.swift */,
+				D806D75C2B181FDC007D21F2 /* ChatListViewModel.swift */,
 			);
 			path = ChatList;
 			sourceTree = "<group>";
@@ -421,6 +428,7 @@
 				D806D7102B161A6C007D21F2 /* PlaceholderView.swift */,
 				D806D7122B161A9D007D21F2 /* LoadingView.swift */,
 				D806D7142B161B36007D21F2 /* ErrorView.swift */,
+				D806D75E2B182102007D21F2 /* SearchButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -505,6 +513,7 @@
 			children = (
 				D806D7522B18198A007D21F2 /* NavigationDestination.swift */,
 				D806D7542B1819A4007D21F2 /* NavigationRouter.swift */,
+				D806D7602B1821DB007D21F2 /* NavigationRoutingView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -687,7 +696,9 @@
 				D806D71B2B161CD5007D21F2 /* MyProfileView.swift in Sources */,
 				D806D7422B1709D5007D21F2 /* URLImageViewModel.swift in Sources */,
 				D806D6F92B15CB5D007D21F2 /* HomeView.swift in Sources */,
+				D806D75D2B181FDC007D21F2 /* ChatListViewModel.swift in Sources */,
 				D806D73D2B17033A007D21F2 /* DiskStorage.swift in Sources */,
+				D806D75F2B182102007D21F2 /* SearchButton.swift in Sources */,
 				D806D71F2B162152007D21F2 /* ContactService.swift in Sources */,
 				D806D72A2B16ED2D007D21F2 /* PhotoImage.swift in Sources */,
 				D806D7152B161B36007D21F2 /* ErrorView.swift in Sources */,
@@ -716,6 +727,7 @@
 				D806D74E2B1715D7007D21F2 /* ChatRoomService.swift in Sources */,
 				D806D7362B16F64C007D21F2 /* UploadSourceType.swift in Sources */,
 				D806D6E22B1592AA007D21F2 /* LoginView.swift in Sources */,
+				D806D7612B1821DB007D21F2 /* NavigationRoutingView.swift in Sources */,
 				D806D74C2B17139D007D21F2 /* ChatRoomObject.swift in Sources */,
 				D806D73B2B17020F007D21F2 /* MemoryStorage.swift in Sources */,
 				D806D6DE2B158E64007D21F2 /* LoginIntroView.swift in Sources */,
