@@ -11,6 +11,8 @@ struct SearchView: View {
     @Environment(\.managedObjectContext) var moc
     @EnvironmentObject private var container: DIContainer
     @StateObject var searchViewModel: SerchViewModel
+    @AccessibilityFocusState var isSearchBarFocused: Bool
+    
     
     var body: some View {
         VStack {
@@ -18,6 +20,7 @@ struct SearchView: View {
             
             if searchViewModel.searchResults.isEmpty {
                 RecentSearchView()
+                // isSearchBarFocused = true
             } else {
                 List {
                     ForEach(searchViewModel.searchResults) { user in
@@ -53,6 +56,7 @@ struct SearchView: View {
                       shouldBecomeFirstResponder: $searchViewModel.shouldBecomeFirstResponder) {
                 setSearchResultWithContext()
             }
+                  .accessibilityFocused($isSearchBarFocused)
             
             Button {
                 searchViewModel.send(action: .clearSearchText)

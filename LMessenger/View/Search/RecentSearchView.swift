@@ -38,11 +38,12 @@ struct RecentSearchView: View {
                                     moc.delete(result)
                                     try? moc.save()
                                 } label: {
-                                    Image("close_search")
+                                    Image("close_search", label: Text("검색어 삭제"))
                                         .resizable()
                                         .frame(width: 15, height: 15)
                                 }
                             }
+                            .accessibilityElement(children: .combine)
                         }
                     }
                 }
@@ -58,6 +59,7 @@ struct RecentSearchView: View {
             
             Spacer()
         }
+        .accessibilityAddTraits(.isHeader)
     }
 }
 

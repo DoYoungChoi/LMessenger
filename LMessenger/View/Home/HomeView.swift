@@ -45,13 +45,13 @@ struct HomeView: View {
         case .success:
             loadedView
                 .toolbar {
-                    Image("bookmark")
-                    Image("notifications")
-                    Image("person_add")
+                    Image(decorative: "bookmark")
+                    Image(decorative: "notifications")
+                    Image(decorative: "person_add")
                     Button{
                         homeViewModel.send(action: .presentView(.setting))
                     } label: {
-                        Image("settings")
+                        Image("settings", label: Text("설정"))
                     }
                 }
         case .fail:
@@ -73,6 +73,7 @@ struct HomeView: View {
                 Text("친구")
                     .font(.system(size: 14))
                     .foregroundStyle(.bkText)
+                    .accessibilityAddTraits(.isHeader)
                 
                 Spacer()
             }
@@ -85,22 +86,25 @@ struct HomeView: View {
             } else {
                 LazyVStack {
                     ForEach(homeViewModel.users, id:\.id) { user in
-                        Button {
-                            homeViewModel.send(action: .presentView(.otherProfile(user.id)))
-                        } label: {
-                            HStack(spacing: 8) {
-                                Image("person")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(Circle())
-                                Text(user.name)
-                                    .font(.system(size: 12))
-                                    .foregroundStyle(.bkText)
-                                Spacer()
-                            }
-                            .padding(.horizontal, 30)
+                        HStack(spacing: 8) {
+                            Image("person")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .clipShape(Circle())
+                            Text(user.name)
+                                .font(.system(size: 12))
+                                .foregroundStyle(.bkText)
+                            Spacer()
                         }
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            homeViewModel.send(action: .presentView(.otherProfile(user.id)))
+                        }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel(user.name)
+                        .accessibilityAddTraits(.isButton)
                     }
+                    .padding(.horizontal, 30)
                 }
             }
         }
@@ -128,6 +132,23 @@ struct HomeView: View {
         .onTapGesture {
             homeViewModel.send(action: .presentView(.myProfile))
         }
+        // 1. .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .combine)
+        .accessibilityHint(Text("내 프로필을 보려면 이중탭하세요."))
+        .accessibilityAction {
+            homeViewModel.send(action: .presentView(.myProfile))
+        }
+        /* 2. .accessibilityRepresentation {
+        .accessibilityRepresentation {
+            Button("내 프로필 보기") {
+                homeViewModel.send(action: .presentView(.myProfile))
+            }
+        }
+         */
+        /* 3. .accessibilityElement(children: .ignore)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("내 프로필 보기"))
+         */
     }
     
     var emptyView: some View {

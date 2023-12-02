@@ -37,5 +37,20 @@ extension Date {
         
         return formatter.string(from: self)
     }
+    
+    var toChatTimeAccessibility: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "a h시 m분"
+        
+        return formatter.string(from: self)
+    }
 
+    var toChatDataAccessibility: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy년 MM월 dd일 E"
+        
+        return formatter.string(from: self)
+    }
 }
