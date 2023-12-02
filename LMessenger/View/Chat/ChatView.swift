@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct ChatView: View {
-    @EnvironmentObject private var navigationRouter: NavigationRouter
+    @EnvironmentObject private var container: DIContainer
     @StateObject var chatViewModel: ChatViewModel
     @FocusState private var isFocused: Bool
     
@@ -33,7 +33,7 @@ struct ChatView: View {
         .toolbar {
             ToolbarItemGroup(placement: .topBarLeading) {
                 Button {
-                    navigationRouter.pop()
+                    container.navigationRouter.pop()
                 } label: {
                     Image("back")
                 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @Environment(\.managedObjectContext) var moc
-    @EnvironmentObject private var navigationRouter: NavigationRouter
+    @EnvironmentObject private var container: DIContainer
     @StateObject var searchViewModel: SerchViewModel
     
     var body: some View {
@@ -44,7 +44,7 @@ struct SearchView: View {
     var topView: some View {
         HStack(spacing: 0) {
             Button {
-                navigationRouter.pop()
+                container.navigationRouter.pop()
             } label:{
                 Image("back_search")
             }
@@ -77,5 +77,5 @@ struct SearchView: View {
     let container = DIContainer(services: StubService())
     
     return SearchView(searchViewModel: .init(container: container, userId: "user"))
-        .environmentObject(NavigationRouter())
+        .environmentObject(DIContainer(services: StubService()))
 }
