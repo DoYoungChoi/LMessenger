@@ -15,7 +15,7 @@ protocol PushNotificationProviderType {
 class PushNotificationProvider: PushNotificationProviderType {
     
     private let serverURL: URL = URL(string: "https://fcm.googleapis.com/fcm/send")!
-    private let serverKey = "AAAAHkEOYT4:APA91bHH4kMPjTSxFxnihq2yejoNOBuMd91JZaM6n4OUd2NA4G_UJQe1h5jPzUWT4dIbqQxL4Nyt92As1PdKb0_OOC_cjodLoSQbR6mkUCFoKitMfEey-stBEP1jsnSGtO-CjqtM_rEU"
+    private let serverKey = "secretKey"
     
     func sendPushNotification(object: PushObject) -> AnyPublisher<Bool, Never> {
         var request = URLRequest(url: serverURL)
